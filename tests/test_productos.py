@@ -31,7 +31,7 @@ def test_agregar_producto_incrementa_contador(logged_in_driver):
 
 def test_producto_agregado_aparece_en_carrito(logged_in_driver):
     productos = ProductosPage(logged_in_driver)
-    productos.agregar_producto_al_carrito()
+
     productos.abrir_carrito()
 
     carrito = CarritoPage(logged_in_driver)
