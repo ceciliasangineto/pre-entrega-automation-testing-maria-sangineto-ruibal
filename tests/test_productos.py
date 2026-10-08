@@ -1,8 +1,4 @@
 from pages.productos_page import ProductosPage
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from pages.productos_page import ProductosPage
 from pages.carrito_page import CarritoPage
 
 def test_titulo_de_pagina(logged_in_driver):
@@ -31,7 +27,7 @@ def test_agregar_producto_incrementa_contador(logged_in_driver):
 
 def test_producto_agregado_aparece_en_carrito(logged_in_driver):
     productos = ProductosPage(logged_in_driver)
-
+    productos.agregar_producto_al_carrito()
     productos.abrir_carrito()
 
     carrito = CarritoPage(logged_in_driver)

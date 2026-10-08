@@ -39,5 +39,8 @@ class ProductosPage:
         return int(contador.text)
 
     def abrir_carrito(self):
-        self.driver.find_element(*self.CARRITO).click()
+        boton = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.CARRITO)
+        )
+        boton.click()
 
